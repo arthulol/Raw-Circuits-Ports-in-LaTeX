@@ -1,0 +1,15 @@
+// NOT GATE
+    \begin{tikzpicture}
+\draw (4,0) node[npn] (t) {};
+\draw (7,-2) node[ground] (GND) {$GND$};
+\draw (4,-2) node[ground] (GND2) {$GND$};
+\draw (-1,0) node[ocirc] (vcc) {} to[normal open switch,l=$S_1$] (1.5,0) to[R, l=$15k$] (3,0) --(t.base);
+\node[left] at (vcc) {$5V$};
+\draw (4,4) node[ocirc] (vcc2) {} to[R,l=$15k$] (4,2) --(t.collector);
+\node[above] at (vcc2) {$5V$};
+\draw (t.collector) to[full led] ++(3,0) --++(GND);
+\draw (t.emitter) --(GND2);
+\draw (t.base) node[above] {B};
+\draw (t.collector) node[left] {C};
+\draw (t.emitter) node[left] {E};
+\end{tikzpicture}
