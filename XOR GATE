@@ -1,0 +1,20 @@
+// XOR GATE
+
+      \begin{tikzpicture}
+\draw (0,0) node[circ] (c1) {};
+\draw (1,0) node[circ] (c2) {};
+\draw (2,0) node[circ] (c3) {};
+\draw (3,0) node[circ] (c4) {};
+\draw (6,2) node[or port] (or) {};
+\draw (9,0) node[and port] (and) {};
+\draw (6,-2) node[nand port] (nand) {};
+\draw (c1) --(c2);
+\draw (c2) to[ocirc] ++(0,2.3) --(or.in 1);
+\draw (c2) to[ocirc] ++(0,-2.3) --(nand.in 2);
+\draw (or.out) to[ocirc] ++(1.48,0) --(and.in 1);
+\draw (nand.out) to[ocirc] ++(1.48,0) --(and.in 2);
+\draw (c3) --(c4);
+\draw (c4) to[ocirc] ++(0,1.71) --(or.in 2);
+\draw (c4) to[ocirc] ++(0,-1.71) --(nand.in 1);
+
+\end{tikzpicture}
