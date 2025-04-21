@@ -1,0 +1,10 @@
+// NAND GATE
+   \begin{tikzpicture}
+\draw (8,0) node[circ] (o) {};
+\draw (4,0) node[and port] (p) {};
+\draw (6,0) node[not port] (p2) {};
+\draw (2,0.28) node[circ] (vcc2) {} --(p.in 1);
+\draw (2,-0.28) node[circ] (vcc) {} --(p.in 2); 
+\draw (p.out) --(p2.in);
+\draw (p2.out) --(o);
+\end{tikzpicture}  
