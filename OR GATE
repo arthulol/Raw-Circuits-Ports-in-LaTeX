@@ -1,0 +1,19 @@
+// OR GATE
+   \begin{tikzpicture}
+\draw (7,-0.79) node[circ] (no) {};
+\draw (4,-0.79) node[circ] (no2) {};
+\draw (4,2) node[npn] (t2) {};
+\draw (4,0) node[npn] (t) {};
+\draw (7,-3.5) node[ground] (GND) {$GND$};
+\draw (4,-3.5) node[ground] (GND2) {$GND$};
+\draw (-1,0) node[ocirc] (vcc) {} to[normal open switch,l=$S_1$] (1.5,0) to[R, l=$15k$] (3,0) --(t.base);
+\draw (-1,2) node[ocirc] (vcc2) {} to[normal open switch,l=$S_2$] (1.5,2) to[R, l=$15k$] (3,2) --(t2.base);
+\node[left] at (vcc) {$5V$};
+\node[left] at (vcc2) {$5V$};
+\draw (t2.emitter) to[ocirc] ++(3,0) to[empty diode] (7,-4) --++(GND);
+\draw (4,4) node[ocirc] (vcc2) {} --(t2.collector);
+\node[above] at (vcc2) {$5V$};
+\draw (t2.collector) to[ocirc] ++(2,0) to[ocirc] ++(0,-2) --(t.collector);
+\draw (t.emitter) to[ocirc] ++(3,0) --++(GND);
+\draw (t.emitter) to[R, l=$15k$] (4,-3) --(GND2);
+\end{tikzpicture}
